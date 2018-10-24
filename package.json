@@ -1,6 +1,6 @@
 {
   "name": "static-waffle",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "author": "Kasper Seweryn <casper@wvffle.net>",
   "license": "MIT",
@@ -31,5 +31,10 @@
   ],
   "bin": {
     "waffle": "bin/waffle"
+  },
+  "auto-changelog": {
+    "template": "keepachangelog",
+    "unreleased": true,
+    "commitLimit": false
   }
 }
