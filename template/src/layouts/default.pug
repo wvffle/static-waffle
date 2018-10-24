@@ -1,0 +1,58 @@
+mixin lib(provider, path)
+  - var isStyle = path.endsWith('.css')
+  - var url = 'https://cdn.jsdelivr.net/' + provider + '/' + path
+  if isStyle
+    link(rel='stylesheet', href=url)
+  else
+    script(src=url)
+      
+mixin npm(path)
+  +lib('npm', path)
+      
+mixin gh(path)
+  +lib('gh', path)
+
+mixin wp(path)
+  +lib('wp', path)
+  
+mixin asset(path, ext)
+  - path = path.replace(/(\..+|)$/, ext)
+  - path = view + '/assets/' + path
+  if ext === '.css'
+    link(rel='stylesheet', href=path)
+      
+  else if ~['.jpg', '.png'].indexOf(ext)
+    img(src=path)
+      
+  else
+    script(src=path)
+  
+mixin style(path)
+  +asset('css/' + path, '.css')
+  
+mixin script(path)
+  +asset('js/' + path, '.js')
+  
+mixin image(path)
+  - var ext = path.split('/').slice(-1)[0].match(/[^.]+(\..+)$/)[1]
+  +asset('img/' + path, ext)
+  
+doctype html
+html
+  head
+    block head
+      title static-waffle
+      
+    block scripts
+      +npm('vue')
+      +npm('vue-router/dist/vue-router.min.js')
+      +npm('lodash')
+      +npm('axios/dist/axios.min.js')
+      
+    block styles
+      +npm('reset.css')
+      
+  body
+    block content
+    block post-scripts
+      +script('app')
