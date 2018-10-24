@@ -2790,6 +2790,11 @@ util-deprecate@~1.0.1:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
+utilus@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/utilus/-/utilus-2.0.1.tgz#fdc81c90055efe6ad2c455cbd38469fb8859264e"
+  integrity sha1-/cgckAVe/mrSxFXL04Rp+4hZJk4=
+
 uuid@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
