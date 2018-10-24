@@ -19,19 +19,15 @@
   "devDependencies": {
     "auto-changelog": "^1.8.1",
     "chai": "^4.2.0",
-    "mocha": "^5.2.0",
     "npm-check": "^5.9.0",
-    "nyc": "^13.1.0",
     "pre-commit": "^1.2.2"
   },
   "scripts": {
     "version": "auto-changelog -p && git add CHANGELOG.md",
-    "depcheck": "npm-check -p",
-    "test": "nyc mocha -R dot"
+    "depcheck": "npm-check -p -i jstransformer-*"
   },
   "pre-commit": [
-    "depcheck",
-    "test"
+    "depcheck"
   ],
   "bin": {
     "waffle": "bin/waffle"
