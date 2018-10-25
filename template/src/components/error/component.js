@@ -4,7 +4,7 @@ Vue.component(`error`, (resolve, reject) => {
     .get(`components/error.tmpl`)
     .then(response => {
       resolve({
-        template: response.data,
+        template: response.data.replace(/%view%/g, _waffle.view),
         props: {
           err: {
             type: Object,

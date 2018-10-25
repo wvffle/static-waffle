@@ -17,7 +17,7 @@ const router = new VueRouter({
 
     const component = async _ => {
       const req = await axios.get(`${_waffle.view || 'index'}/${tpath}.tmpl`)
-      const template = req.data
+      const template = req.data.replace(/%view%/g, _waffle.view)
       return { template, name }
     }
 
