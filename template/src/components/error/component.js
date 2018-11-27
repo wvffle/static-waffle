@@ -1,7 +1,7 @@
 /* global Vue err */
 Vue.component(`error`, (resolve, reject) => {
   axios
-    .get(`components/error.tmpl`)
+    .get(`components/error.tmpl`, { responseType: 'text' })
     .then(response => {
       resolve({
         template: response.data.replace(/%view%/g, _waffle.view),
