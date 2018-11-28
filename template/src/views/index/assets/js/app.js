@@ -14,6 +14,10 @@ const router = new VueRouter({
         name = route[1]
       }
     }
+    
+    if (name === undefined) {
+      name = slugify(route.replace(/\//g, '-'))
+    }
 
     const component = async _ => {
       const req = await axios.get(`${_waffle.view || 'index'}/${tpath}.tmpl`, { responseType: 'text' })
