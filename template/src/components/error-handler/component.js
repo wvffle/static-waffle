@@ -1,5 +1,5 @@
-/* global Vue */
-Vue.component(`error-handler`, {
+export default {
+  name: `error-handler`,
   functional: true,
   render (h, ctx) {
     if (!!_waffle.err) {
@@ -8,4 +8,4 @@ Vue.component(`error-handler`, {
 
     return ctx.slots().default
   },
-})
+}

@@ -1,16 +1,7 @@
-/* global Vue err */
-Vue.component(`<%= name %>`, (resolve, reject) => {
-  axios
-    .get(`components/<%= name %>.tmpl`, { responseType: 'text' })
-    .then(response => {
-      resolve({
-        template: response.data.replace(/%view%/g, _waffle.view),
-        props: [],
-        data () {
-          return {}
-        },
-      })
-    })
-    .catch(reject)
-
-})
+export default {
+  name: `<%= name %>`,
+  props: [],
+  data () {
+    return {}
+  },
+}
