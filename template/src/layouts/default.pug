@@ -1,5 +1,5 @@
-include /values/mixins.pug
-  
+include /values/mixins
+
 doctype html
 html
   head
@@ -10,7 +10,7 @@ html
       title static-waffle
       
     block scripts
-      script(src="https://cdn.polyfill.io/v2/polyfill.js")
+      script(src="https://cdn.polyfill.io/v2/polyfill.js?features=IntersectionObserver")
         
       +npm('vue/dist/vue.js')
       +npm('vue-router/dist/vue-router.min.js')

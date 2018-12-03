@@ -14,7 +14,7 @@ const router = new VueRouter({
         name = route[1]
       }
     }
-    
+
     if (name === undefined) {
       name = slugify(route.replace(/\//g, '-'))
     }
@@ -22,7 +22,18 @@ const router = new VueRouter({
     const component = async _ => {
       const req = await axios.get(`${_waffle.view || 'index'}/${tpath}.tmpl`, { responseType: 'text' })
       const template = req.data.replace(/%view%/g, _waffle.view)
-      return { template, name }
+      return {
+        template,
+        name,
+
+        beforeRouteEnter (to, from, next) {
+          NProgress.start()
+
+          next(vm => {
+            vm.$root.$emit('lazy-reset')
+          })
+        }
+      }
     }
 
     return { path, name, component }
@@ -31,21 +42,26 @@ const router = new VueRouter({
 
 Vue.use(VueRouter)
 
-router.beforeEach((to, from, next) => {
-  NProgress.start()
-  next()
-})
-
-router.afterEach((to, from) => {
-
-  if (to.name === 'notfound') {
-    NProgress.done()
-    return
-  }
-
-  NProgress.done()
-})
-
 const app = new Vue({
   router,
+  data: {
+    lazy: 0,
+  },
+  created () {
+    this.$on('lazy-reset', () => {
+      this.lazy = 0
+    })
+
+    this.$on('lazy-add', () => {
+      this.lazy += 1
+    })
+
+    this.$on('lazy-remove', () => {
+      this.lazy -= 1
+
+      if (this.lazy <= 0) {
+        NProgress.done()
+      }
+    })
+  }
 }).$mount('#app')

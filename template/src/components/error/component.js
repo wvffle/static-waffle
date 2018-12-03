@@ -1,5 +1,6 @@
 export default {
   name: `error`,
+  lazy: false,
   props: {
     err: {
       type: Object,
