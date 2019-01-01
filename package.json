@@ -28,7 +28,8 @@
   },
   "scripts": {
     "version": "auto-changelog -p && git add CHANGELOG.md",
-    "depcheck": "npm-check -p -i jstransformer-*"
+    "depcheck": "npm-check -p -i jstransformer-*",
+    "postpublish": "git push"
   },
   "pre-commit": [
     "depcheck"
