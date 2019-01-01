@@ -31,6 +31,9 @@ const router = new VueRouter({
 
           next(vm => {
             vm.$root.$emit('lazy-reset')
+            setTimeout(() => {
+              if (vm.$root.lazy === 0) NProgress.done()
+            }, 100)
           })
         }
       }
