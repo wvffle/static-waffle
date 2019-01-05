@@ -25,14 +25,14 @@
     "auto-changelog": "^1.8.1",
     "chai": "^4.2.0",
     "npm-check": "^5.9.0",
-    "pre-commit": "^1.2.2"
+    "pre-push": "^0.1.1"
   },
   "scripts": {
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "depcheck": "npm-check -p -i jstransformer-*",
     "postpublish": "git push"
   },
-  "pre-commit": [
+  "pre-push": [
     "depcheck"
   ],
   "bin": {
