@@ -50,9 +50,9 @@ acorn@^4.0.4, acorn@~4.0.2:
   integrity sha1-EFSVrlNh1pe9GVyCUZLhrX8lN4c=
 
 acorn@^6.0.4:
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.0.4.tgz#77377e7353b72ec5104550aa2d2097a2fd40b754"
-  integrity sha512-VY4i5EKSKkofY2I+6QLTbTTN/UvEQPCo6eiwzzSaSWfpaDhOmStMCMod6wmuPciNq+XS0faCglFu2lHZpdHUtg==
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.0.5.tgz#81730c0815f3f3b34d8efa95cb7430965f4d887a"
+  integrity sha512-i33Zgp3XWtmZBMNvCr4azvOFeWVw1Rk6p3hfi3LUDvIFraOMywb1kAtrbi+med14m4Xfpqm3zRZMT+c0FNE7kg==
 
 align-text@^0.1.1, align-text@^0.1.3:
   version "0.1.4"
@@ -166,9 +166,9 @@ async@^2.5.0:
     lodash "^4.17.10"
 
 auto-changelog@^1.8.1:
-  version "1.10.2"
-  resolved "https://registry.yarnpkg.com/auto-changelog/-/auto-changelog-1.10.2.tgz#5f29feb8d1e76b4a9daf5f0b727a9d497fa2e004"
-  integrity sha512-c5QqmWx12+INtR0eKcc2VLIssKFT5zt0dk3tdwVzlLYuLktepBQ7rBZJP8nSi2Hxwh3id7U8ZOw4DIezuQ0k6A==
+  version "1.10.3"
+  resolved "https://registry.yarnpkg.com/auto-changelog/-/auto-changelog-1.10.3.tgz#498da9b1f8752c46c76684f26c3e43a3e0b07429"
+  integrity sha512-VBRDh7Xu0zzAQCMhFYPYx/Qma4y16n03Lol5ZKOYvFaU/68D26ohU7v1g9f2EGJ2Zp8YMcsuoX1d9G7l7t9qGw==
   dependencies:
     "@babel/polyfill" "^7.0.0"
     commander "^2.19.0"
@@ -1264,9 +1264,9 @@ js-tokens@^3.0.0, js-tokens@^3.0.2:
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
 
 js-yaml@^3.4.2, js-yaml@^3.6.1:
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.12.0.tgz#eaed656ec8344f10f527c6bfa1b6e2244de167d1"
-  integrity sha512-PIt2cnwmPfL4hKNwqeiuz4bKfnzHTBv6HyVgjahA6mPLwPDzjDWrplJBMjHUFxku/N3FlmrbyPclad+I+4mJ3A==
+  version "3.12.1"
+  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.12.1.tgz#295c8632a18a23e054cf5c9d3cecafe678167600"
+  integrity sha512-um46hB9wNOKlwkHgiuyEVAybXBjwFUV0Z/RaHJblRd9DXltue9FTYvzCr9ErQrK9Adz5MU4gHWVaNUfdmrC8qA==
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
@@ -2242,9 +2242,9 @@ rollup-pluginutils@^2.0.1, rollup-pluginutils@^2.3.3:
     micromatch "^2.3.11"
 
 rollup@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.0.0.tgz#db97a04a15364d1cd3823a0024ae8d8fda530a1c"
-  integrity sha512-LV6Qz+RkuDAfxr9YopU4k5o5P/QA7YNq9xi2Ug2IqOmhPt9sAm89vh3SkNtFok3bqZHX54eMJZ8F68HPejgqtw==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.0.1.tgz#59dbf80d4ca993e73ec0886c5a649d4e297ae07d"
+  integrity sha512-jf1EA9xJMx4hgEVdJQd8lVo2a0gbzY7fKM9kHZwQzcafYDapwLijd9G56Kxm2/RdEnQUEw9mSv8PyRWhsV0x2A==
   dependencies:
     "@types/estree" "0.0.39"
     "@types/node" "*"
