@@ -24,17 +24,13 @@
   "devDependencies": {
     "auto-changelog": "^1.8.1",
     "chai": "^4.2.0",
-    "npm-check": "^5.9.0",
-    "pre-push": "^0.1.1"
+    "npm-check": "^5.9.0"
   },
   "scripts": {
     "version": "auto-changelog -p && git add CHANGELOG.md",
-    "depcheck": "npm-check -p -i jstransformer-*",
+    "prepublish": "npm-check -p -i jstransformer-*",
     "postpublish": "git push"
   },
-  "pre-push": [
-    "depcheck"
-  ],
   "bin": {
     "waffle": "bin/waffle"
   },
