@@ -22,6 +22,7 @@ html
       script.
         window._waffle = {
           view: `#{view}`,
+          routeDecorator: `!{routeDecorator}`,
           err: !{!err || err.status === 200 ? false : JSON.stringify(err)},
           styles: document.createElement('style'),
           async loadStyle (component) {
