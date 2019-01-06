@@ -1,5 +1,3 @@
-- view = view ? view : '%view%'
-  
 mixin lib(provider, path)
   - var isStyle = path.endsWith('.css')
   - var url = 'https://cdn.jsdelivr.net/' + provider + '/' + path
@@ -29,6 +27,7 @@ mixin root(path, ext)
     script(src=path)
   
 mixin asset(path, ext)
+  - view = view ? view : '%view%'
   +root(view + '/assets/' + path, ext)
   
 mixin style(path)
