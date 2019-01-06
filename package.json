@@ -1,6 +1,6 @@
 {
   "name": "static-waffle",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "main": "index.js",
   "author": "Kasper Seweryn <casper@wvffle.net>",
   "license": "MIT",
