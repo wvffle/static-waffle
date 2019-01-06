@@ -40,6 +40,7 @@ html
         document.head.appendChild(_waffle.styles)
         
       +script('/components')
+      +script('routes')
       
     mixin font(name, sizes = [ 400 ])
       link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=' + name.replace(/\s/g, '+') + ':' + sizes.join(','))
@@ -54,6 +55,5 @@ html
       router-view
         
     block post-scripts
-      +script('routes')
       +script('router')
       +script('app')
