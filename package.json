@@ -27,7 +27,6 @@
   },
   "devDependencies": {
     "auto-changelog": "^1.8.1",
-    "chai": "^4.2.0",
     "npm-check": "^5.9.0"
   },
   "scripts": {
