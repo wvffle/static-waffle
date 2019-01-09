@@ -14,7 +14,7 @@
     "jstransformer-markdown-it": "^2.1.0",
     "micromatch": "^3.1.10",
     "nib": "^1.1.2",
-    "projector-yarn": "^3.1.0",
+    "projector-spawn": "^1.0.1",
     "prompts": "^2.0.1",
     "pug": "^2.0.3",
     "recursive-readdir": "^2.2.2",
