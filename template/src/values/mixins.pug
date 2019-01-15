@@ -48,3 +48,7 @@ mixin image(path)
     +root(path.slice(1), ext)
   else
     +asset('img/' + path, ext)
+    
+mixin font(name, sizes = [ 400 ])
+  link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=' + name.replace(/\s/g, '+') + ':' + sizes.join(','))
+      
