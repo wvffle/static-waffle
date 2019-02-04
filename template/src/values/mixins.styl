@@ -1,0 +1,12 @@
+flex(args...)
+  if args[0] is 'center'
+    display flex
+    justify-content center
+    align-items center
+  else
+    flex args
+
+utilus.media.xs  = media-query('<768px')
+utilus.media.sm = media-query('>767px')
+utilus.media.md = media-query('>991px')
+utilus.media.lg = media-query('>1199px')

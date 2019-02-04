@@ -33,14 +33,14 @@ html
             
             this.styles[component] = true
             
-            const { data } = await axios.get(`components/${component}.css`, { responseType: 'text' })
+            const { data } = await axios.get(`components/styles/${component}.css`, { responseType: 'text' })
             this.styles.innerHTML += data
           }
         }
         
         document.head.appendChild(_waffle.styles)
         
-      +script('/components')
+      +script('/components/fetcher')
       
     block route-scripts
       +script('routes')
