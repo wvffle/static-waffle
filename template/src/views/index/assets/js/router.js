@@ -51,8 +51,8 @@ const router = new VueRouter({
 
       if (route.templatePath) {
         try {
-          const req = await axios.get(`${_waffle.view || 'index'}/${route.templatePath}.tmpl`, { responseType: 'text' })
-          template = req.data.replace(/%view%/g, _waffle.view)
+          const req = await _waffle.get(`${_waffle.view || 'index'}/${route.templatePath}.tmpl`)
+          template = req.replace(/%view%/g, _waffle.view)
         } catch (e) {
           err = {
             name: 'Template not found.',
@@ -64,7 +64,7 @@ const router = new VueRouter({
 
       return {
         ...route,
-        template: _.template(_waffle.routeDecorator)({ template }),
+        template: _waffle.routeDecorator.replace(/%template%/g, template),
 
         data () {
           if (route.data) {

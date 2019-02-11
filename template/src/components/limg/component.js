@@ -16,7 +16,7 @@ export default {
 
   async mounted () {
     const fetch = async () => {
-      const { data } = await axios.get(this.src, { responseType: 'blob' })
+      const data = await _waffle.get(this.src, 'blob')
       this.blob = URL.createObjectURL(data)
       this.loaded = true
     }

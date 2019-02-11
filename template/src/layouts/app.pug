@@ -10,14 +10,12 @@ html
       title static-waffle
       
     block scripts
-      script(src="https://cdn.polyfill.io/v2/polyfill.js?features=IntersectionObserver")
+      script(src="https://cdn.polyfill.io/v2/polyfill.js?features=IntersectionObserver,Promise,fetch")
         
       +npm('vue/dist/vue.js')
-      +npm('vue-router/dist/vue-router.min.js')
-      +npm('axios/dist/axios.min.js')
-      +npm('nprogress')
+      +npm('vue-router/dist/vue-router.js')
+      +npm('systemjs/dist/system.js')
       +npm('slugify')
-      +npm('lodash')
       
       script.
         window._waffle = {
@@ -26,6 +24,13 @@ html
           routeDecorator: `!{routeDecorator}`,
           err: !{!err || err.status === 200 ? false : JSON.stringify(err)},
           styles: document.createElement('style'),
+          async get (url, type = 'text') {
+            const response = await fetch(url)
+            return response[type]()
+          },
+          async import (url, ...args) {
+            return System.import(`https://cdn.jsdelivr.net/npm/${url}`, ...args)
+          },
           async loadStyle (component) {
             if (this.styles[component]) {
               return
@@ -33,7 +38,7 @@ html
             
             this.styles[component] = true
             
-            const { data } = await axios.get(`components/styles/${component}.css`, { responseType: 'text' })
+            const data = await this.get(`components/styles/${component}.css`)
             this.styles.innerHTML += data
           }
         }
@@ -56,5 +61,6 @@ html
         router-view
         
     block post-scripts
+      +npm('nprogress')
       +script('router')
       +script('app')
