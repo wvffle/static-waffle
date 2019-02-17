@@ -7,7 +7,7 @@ html
       meta(charset='utf-8')
     
     block head
-      title static-waffle
+      title!= app.name
       
     block scripts
       script(src="https://cdn.polyfill.io/v2/polyfill.js?features=IntersectionObserver,Promise,fetch")
