@@ -1,12 +1,16 @@
 header.navigation
-  background color-alt
-  fixed 0 _ _
   width 100%
   z-index 1
+  padding 47px _ 77px
+
+  &[fixed]
+    fixed 0 _ _
 
   nav
-    display flex
-    flex-flow row
+    +media('md')
+      display flex
+      flex-flow row
+      align-items center
 
     .right
       margin-left auto
@@ -14,10 +18,28 @@ header.navigation
     .left
       margin-right auto
 
+      a:first-child:last-child
+        display flex
+        align-items center
+
+        +media('md')
+          display block
+
     a
-      display inline-block
-      padding 27px 7px
+      display block
+      padding 27px 17px
       color rgba(color-primary, .5)
+      font-family Montserrat, sans-serif
+      text-transform uppercase
+      letter-spacing 2px
+      color rgba(#000, .66)
+      font-weight 900
+
+      +media('sm')
+        display inline-block
+
+      img
+        width 266px
 
       &:hover
         color color-primary

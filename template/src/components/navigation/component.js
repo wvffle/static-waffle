@@ -1,8 +1,12 @@
 export default {
   name: `navigation`,
   lazy: false,
-  props: [],
+  props: ['fixed'],
   data () {
-    return {}
+    const routePaths = Object.keys(routes)
+
+    return {
+      routes: routePaths,
+    }
   },
 }
