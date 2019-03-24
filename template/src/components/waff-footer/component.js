@@ -29,8 +29,11 @@ export default {
     }
   },
   computed: {
+    companyname () {
+      return this.company || _waffle.app
+    },
     comment () {
-      const index = _waffle.app
+      const index = this.companyname
         .split('')
         .reduce((a, b) => a + b.charCodeAt(0), 0)
 
