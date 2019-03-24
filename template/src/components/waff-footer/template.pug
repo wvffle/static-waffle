@@ -1,0 +1,11 @@
+.waff-footer
+  .container
+    .left
+      p Copyright {{ yearspan }} {{ company }}
+        br(v-if='copyright')
+        | {{ copyright }}
+      
+    .center
+      slot
+        
+    .right Designed by #[a(href='https://wvffle.net') wvffle] {{ comment }}
