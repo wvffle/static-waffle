@@ -1,6 +1,12 @@
 export default {
   name: `mapbox`,
-  lazy: false,
+  lazy: true,
+  css: [
+    'https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css',
+  ],
+  js: {
+    mapboxgl: 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js',
+  },
   props: {
     token: { type: String, required: true },
     styleUrl: { type: String, default: 'mapbox://styles/mapbox/light-v9' },
@@ -13,13 +19,14 @@ export default {
     const id = `map-${Math.round(Math.random() * 0xffffff).toString(16)}`
     return { id, name: 'mapbox' }
   },
-  mounted () {
+  async mounted () {
     this.center = [
       this.lat || 0,
       this.lng || 0,
     ]
 
-    this.$nextTick(() => {
+    this.$on('imported', () => {
+      const { mapboxgl } = this
       mapboxgl.accessToken = this.token
 
       this.map = new mapboxgl.Map({
@@ -33,10 +40,12 @@ export default {
         this.addMarker()
       }
 
+      this.lazy()
     })
   },
   methods: {
     addMarker (center, options = {}) {
+      const { mapboxgl } = this
       new mapboxgl.Marker({ color: '#00aaff', ...options })
         .setLngLat(center || this.center)
         .addTo(this.map)
