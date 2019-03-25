@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     companyname () {
-      return this.company || _waffle.app
+      return this.company || waffle.app
     },
     comment () {
       const index = this.companyname

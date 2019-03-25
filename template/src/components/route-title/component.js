@@ -3,7 +3,7 @@ export default {
   props: [],
   render () {
     const title = this.$slots.default[0]
-    const app = _waffle.app
+    const app = waffle.app
     document.title = !title || !title.text ? app : `${title.text} | ${app}`
     return false
   }
