@@ -6,6 +6,28 @@ flex(args...)
   else
     flex args
 
+pallete(number, raw=false)
+  if raw
+    return color-pallete[s('color%s', number)]
+
+  color = s('var(--color%s)', number)
+
+  if current-property[0] is 'pallete'
+    background color
+
+    if dark(pallete(number, true))
+      color color-text-light
+    else
+      color color-text-dark
+
+  return color
+
+
+apply-colors = @block
+  for color, i in color-pallete
+    {s('--%s', unquote(color))} color-pallete[color]
+
+
 utilus.media.xs  = media-query('<768px')
 utilus.media.sm = media-query('>767px')
 utilus.media.md = media-query('>991px')
