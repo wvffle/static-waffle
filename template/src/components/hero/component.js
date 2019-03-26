@@ -7,11 +7,6 @@ export default {
     bg:    { default: '' },
     dim:   { default: 0 },
   },
-  data () {
-    return {
-      name: `hero`,
-    }
-  },
   computed: {
     style () {
       return {
@@ -34,7 +29,7 @@ export default {
         return this.bg
       }
 
-      return `url(${this.bg})`
+      return `url(${waffle.asset(this.bg)})`
     },
 
     attach () {
