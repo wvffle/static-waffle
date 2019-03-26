@@ -36,6 +36,18 @@ const waffle = {
     const data = await this.get(`components/styles/${component}.css`)
     this.styles.innerHTML += data
   },
+
+  asset (url) {
+    if (url.startsWith('http')) {
+      return url
+    }
+
+    if (url.startsWith('/')) {
+      return url.slice(1)
+    }
+
+    return `${waffle.view}/assets/${url}`
+  },
 }
 
 document.head.appendChild(waffle.styles)
