@@ -48,6 +48,18 @@ const waffle = {
 
     return `${waffle.view}/assets/${url}`
   },
+
+  image (url) {
+    if (url.startsWith('http')) {
+      return url
+    }
+
+    if (url.startsWith('/')) {
+      return url.slice(1)
+    }
+
+    return waffle.asset(`img/${url}`)
+  },
 }
 
 document.head.appendChild(waffle.styles)
