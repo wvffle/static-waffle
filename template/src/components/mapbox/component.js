@@ -13,7 +13,8 @@ export default {
     lat: { type: Number, required: true },
     lng: { type: Number, required: true },
     zoom: { type: Number, default: 17 },
-    marker: { type: Boolean, default: false }
+    marker: { type: Boolean, default: false },
+    noScroll: { type: Boolean, default: false },
   },
   data () {
     const id = `map-${Math.round(Math.random() * 0xffffff).toString(16)}`
@@ -38,6 +39,10 @@ export default {
 
       if (this.marker) {
         this.addMarker()
+      }
+
+      if (this.noScroll) {
+        this.map.scrollZoom.disable()
       }
 
       this.lazy()
