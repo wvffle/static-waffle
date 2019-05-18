@@ -5,7 +5,8 @@ export default {
     small: { default: false },
     fixed: { default: false },
     bg:    { default: '' },
-    dim:   { default: 0 },
+    dim:   { default: 0.5 },
+    autoHeight: { default: false },
   },
   computed: {
     style () {
@@ -13,6 +14,7 @@ export default {
         backgroundImage: this.background,
         backgroundColor: this.background,
         backgroundAttachment: this.attach,
+        height: this.autoHeight ? 'auto' : undefined,
       }
     },
 
@@ -29,7 +31,7 @@ export default {
         return this.bg
       }
 
-      return `url(${waffle.asset(this.bg)})`
+      return `url(${waffle.image(this.bg)})`
     },
 
     attach () {
