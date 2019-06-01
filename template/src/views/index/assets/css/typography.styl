@@ -6,13 +6,13 @@ body
   font-weight 400
   font-family 'Source Sans Pro', sans-serif
   word-wrap break-word
-  color hsla(#000, .7)
+  color color-text-dark
 p
   margin-bottom 1.56rem
 
 h1
   @extends p
-  color hsla(#000, .85)
+  color hsla(raw-pallete(4), .85)
   font-family Source Sans Pro, sans-serif
   font-weight 200
   text-rendering optimizeLegibility
@@ -42,20 +42,21 @@ h6
 
 
 a
-  color color-primary
+  color pallete(1)
   text-decoration none
 
   &:hover
-    color color-alt
-    text-decoration underline
+    color pallete(2)
 
-  &.router-link-active
-    color color-alt
+  &.router-link-exact-active
+    color pallete(2)
 
 strong
+  display inline-block
   font-weight 700
 
 small
+  display inline-block
   font-size 80%
 
 ul
@@ -67,9 +68,8 @@ ol
 
 pre
 kbd
-code
-  background color-alt
-  color #fff
+  background pallete(3)
+  color pallete(5)
   border-radius 3px
   padding 0.2rem _
 
@@ -85,19 +85,5 @@ blockquote
   padding _ _ 1.17rem
   font-size 1.1487rem
   line-height 1.56rem
-  color hsla(#000, .6)
-  border-left 0.39rem solid hsla(#000, .13)
-
-.text-center
-  text-align center
-
-.vmiddle
-  vertical-align middle
-
-.text-light
-  color color-text-light
-
-.text-dark
-  color color-text-dark
-
-  
+  color hsla(raw-pallete(4), .6)
+  border-left 0.39rem solid hsla(raw-pallete(4), .13)
