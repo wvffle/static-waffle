@@ -50,15 +50,17 @@ const router = new VueRouter({
       let template = route.template || ''
 
       if (route.templatePath) {
-        try {
-          const req = await waffle.get(`${waffle.view || 'index'}/${route.templatePath}.tmpl`)
-          template = req.replace(/%view%/g, waffle.view)
-        } catch (e) {
+        const req = await waffle.ajax.get(`${waffle.view || 'index'}/${route.templatePath}.tmpl`)
+        if (req.success) {
+          template = req.response.replace(/%view%/g, waffle.view)
+        } else if (req.status === 404) {
           err = {
-            name: 'Template not found.',
+            name: 'Template not found',
             message: `Template file for route ${path} not found.`,
             status: 404,
           }
+        } else {
+          err = { status: req.status, name: req.statusText }
         }
       }
 
