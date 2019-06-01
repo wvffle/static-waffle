@@ -1,33 +1,42 @@
 .error
   pre
-    span.keyword main&nbsp;
-    span {
+    span.keyword function get&nbsp;
+    span (url) {
     
     br
-    br
-    span.comment &nbsp; // ...
+    span.keyword &nbsp; const
+    span  response =
+    span.token  new
+    span.keyword  Response
+    span (url)
     br
     br
     
-    span.comment &nbsp; // {{ err.status }} {{ err.name }}.
+    span.comment &nbsp; // {{ err.status }} {{ err.name }}
     br
     
     span.comment(v-if='err.message') &nbsp; // {{ err.message }}
     br(v-if='err.message')
     
-    span.keyword &nbsp; if&nbsp;
-    span (status ===&nbsp;
-    span.token {{ err.status }}
+    span.keyword &nbsp; if
+    span  (response.status ===
+    span.token  {{ err.status }}
     span ) {
     br
     
-    span.keyword &nbsp; &nbsp; Console
-    span .print(
+    span.token &nbsp; &nbsp; throw new
+    span.keyword  Error
+    span (
     span.token "{{ face }}"
     span )
     br
     
     span &nbsp; }
+    br
+    br
+      
+    span.token  &nbsp;return
+    span  response
     br
       
     span }
