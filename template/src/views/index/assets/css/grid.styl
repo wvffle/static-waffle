@@ -1,18 +1,26 @@
 .row
   display flex
+  flex-flow column
+  overflow-x auto
+
+  +media('md')
+    flex-flow row
+    overflow-x unset
 
   .col
-    flex-grow 1
     width 100%
 
-    &.span-2
-      flex-grow 2
-      width 200%
+    +media('md')
+      flex-grow 1
 
-    &.span-3
-      flex-grow 3
-      width 300%
+      &.span-2
+        flex-grow 2
+        width 200%
 
-    &.span-4
-      flex-grow 4
-      width 400%
+      &.span-3
+        flex-grow 3
+        width 300%
+
+      &.span-4
+        flex-grow 4
+        width 400%
