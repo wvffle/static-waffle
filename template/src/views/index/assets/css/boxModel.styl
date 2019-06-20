@@ -1,0 +1,23 @@
+boxModels = 'padding', 'margin'
+
+for model in boxModels
+  name = substr(unquote(model), 0, 3)
+
+  .{name}
+    --pad-top 0
+    --pad-right 0
+    --pad-bottom 0
+    --pad-left 0
+    for size in (xs sm md)
+      +media(s("%s-only", size))
+        {model}-left s('var(--pad-h-%s, var(--pad-left-%s, initial))', size, size)
+        {model}-right s('var(--pad-h-%s, var(--pad-right-%s, initial))', size, size)
+
+        {model}-top s('var(--pad-v-%s, var(--pad-top-%s, initial))', size, size)
+        {model}-bottom s('var(--pad-v-%s, var(--pad-bottom-%s, initial))', size, size)
+
+    {model}-left var(--pad-h, var(--pad-left))
+    {model}-right var(--pad-h, var(--pad-right))
+
+    {model}-top var(--pad-v, var(--pad-top))
+    {model}-bottom var(--pad-v, var(--pad-bottom))
