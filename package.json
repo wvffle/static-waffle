@@ -1,6 +1,6 @@
 {
   "name": "static-waffle",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "main": "index.js",
   "author": "Kasper Seweryn <casper@wvffle.net>",
   "license": "MIT",
@@ -30,12 +30,11 @@
     "utilus": "^2.0.1"
   },
   "devDependencies": {
-    "auto-changelog": "^1.8.1",
-    "npm-check": "^5.9.0"
+    "auto-changelog": "^1.8.1"
   },
   "scripts": {
     "version": "auto-changelog -p && git add CHANGELOG.md",
-    "prepublish": "npm-check -u",
+    "prepublish": "yarn upgrade-interactive",
     "postpublish": "git push"
   },
   "bin": {
