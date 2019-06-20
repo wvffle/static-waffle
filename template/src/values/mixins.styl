@@ -6,21 +6,21 @@ flex(args...)
   else
     flex args
 
-pallete(number, raw=false)
-  if raw
-    return color-pallete[s('color%s', number)]
-
+pallete(number)
   color = s('var(--color%s)', number)
 
   if current-property[0] is 'pallete'
     background color
 
-    if dark(pallete(number, true))
+    if dark(raw-pallete(number))
       color color-text-light
     else
       color color-text-dark
 
   return color
+
+raw-pallete(number)
+  return color-pallete[s('color%s', number)]
 
 
 apply-colors = @block

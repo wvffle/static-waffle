@@ -1,11 +1,11 @@
 .waff-footer
-  .container
-    .left
+  .container.row
+    .col
       p Copyright {{ yearspan }} {{ companyname }}
         br(v-if='copyright')
         | {{ copyright }}
-      
-    .center
+    .col.text-center
       slot
         
-    .right Designed by #[a(href='https://wvffle.net') wvffle] {{ comment }}
+    .col.text-right
+      span(v-if='$root.bypassFooter !== true') Designed by #[a(href='https://wvffle.net') wvffle] {{ comment }}

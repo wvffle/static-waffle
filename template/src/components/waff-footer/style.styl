@@ -5,12 +5,25 @@
   +media('md')
     font-size 12px
 
-
   .container
-    display flex
-    justify-content space-between
     align-items center
     padding 17px _
 
     p
       margin _ _ 0
+
+    a > i
+      color pallete(5)
+      padding 0 7px
+
+    > .col > *
+      text-align center
+
+      &:last-child
+        padding-bottom 27px
+
+        +media('md')
+          padding-bottom 0
+
+      +media('md')
+        text-align inherit
