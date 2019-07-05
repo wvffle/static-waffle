@@ -3,6 +3,14 @@
   flex-flow column
   overflow-x auto
 
+  &.reverse-xs
+    +media('xs-only')
+      flex-flow column-reverse
+
+  &.reverse-sm
+    +media('sm-only')
+      flex-flow column-reverse
+
   +media('md')
     flex-flow row
     overflow-x unset

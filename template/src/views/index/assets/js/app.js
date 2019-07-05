@@ -17,9 +17,6 @@ const createBoxModelDirective = (model, size) => {
     directiveName += `-${size}`
   }
 
-  console.log(model, boxName, directiveName)
-
-
   Vue.directive(directiveName, function (el, binding) {
     el.classList.add(boxName)
     const name = boxName
